@@ -1,0 +1,17 @@
+set dotenv-load := true
+
+dev:
+	foreman start
+
+alias check := build
+build:
+	go build ./...
+
+test:
+	go test ./...
+
+gen:
+	go tool sqlc generate
+
+compose:
+	docker compose up
