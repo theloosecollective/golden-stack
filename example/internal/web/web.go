@@ -1,13 +1,13 @@
 package web
 
 import (
-	"context"
-	"log/slog"
+	"embed"
+	"os"
 
+	"example.com/internal/web/handlers"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"{{ .mod }}/internal/cmdutil"
-	"{{ .mod }}/internal/web/handlers"
+	"go.quinn.io/ccf/assets"
 )
 
 //go:embed public

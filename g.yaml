@@ -6,3 +6,8 @@ generators:
       - mod
     post:
       - go mod init {{ .mod }}
+      - go get -tool github.com/air-verse/air
+      - go get -tool github.com/spf13/cobra-cli
+      - go get -tool github.com/sqlc-dev/sqlc/cmd/sqlc
+      - go get -tool github.com/mattn/goreman
+      - go mod tidy
