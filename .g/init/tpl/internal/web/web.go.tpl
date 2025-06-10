@@ -8,6 +8,7 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 	"{{ .mod }}/internal/cmdutil"
 	"{{ .mod }}/internal/web/handlers"
+	"go.quinn.io/ccf/assets"
 )
 
 //go:embed public

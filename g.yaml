@@ -1,6 +1,9 @@
 version: "1"
 generators:
   - name: sqlc
+    post:
+      - go get -tool github.com/sqlc-dev/sqlc/cmd/sqlc
+
   - name: init
     args:
       - mod
@@ -8,6 +11,7 @@ generators:
       - go mod init {{ .mod }}
       - go get -tool github.com/air-verse/air
       - go get -tool github.com/spf13/cobra-cli
-      - go get -tool github.com/sqlc-dev/sqlc/cmd/sqlc
       - go get -tool github.com/mattn/goreman
+      - go get -tool github.com/a-h/templ/cmd/templ
+      - go tool templ generate
       - go mod tidy

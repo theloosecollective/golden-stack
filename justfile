@@ -1,5 +1,5 @@
 example:
 	#!/usr/bin/env -S zsh -i -l
-	rm example/go.mod
+	rm -rf example
 	g -out example init example.com
 	g -out example sqlc
