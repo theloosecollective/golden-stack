@@ -1,4 +1,8 @@
 version: "1"
 generators:
   - name: sqlc
-
+  - name: init
+    args:
+      - mod
+    post:
+      - go mod init {{ .mod }}
