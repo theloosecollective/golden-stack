@@ -1,9 +1,9 @@
 function config({ outDir }) {
-    let name = outDir.split('/').pop()
+	let name = outDir.split("/").pop();
 
-    if (name === '' && outDir.length > 0) {
-        name = outDir.pop()
-    }
+	if (name === "" && outDir.length > 0) {
+		name = outDir.pop();
+	}
 
-    return { name }
+	return { name };
 }
