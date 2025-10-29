@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgres17:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT:-5432}:5432"
+
+  # s3:
+  #   image: localstack/localstack
+  #   ports:
+  #     - "4566:4566"
+  #   volumes:
+  #     - "localstack_data:/var/lib/localstack"
+
+  # caddy:
+  #   image: caddy:2
+  #   ports:
+  #     - "8081:80"
+  #     - "8082:8082"
+  #   volumes:
+  #     - ./Caddyfile:/etc/caddy/Caddyfile
+  #   environment:
+
+  # nats:
+  #   image: nats:latest
+  #   ports:
+  #     - "4222:4222"
+  #     - "8222:8222"
+
+volumes:
+  postgres17:
