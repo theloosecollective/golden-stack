@@ -7,11 +7,24 @@ alias check := build
 build:
 	go build ./...
 
+run +ARGS:
+	go run main.go {{ARGS}}
+
 test:
 	go test ./...
+
+compose:
+	docker compose up
 
 gen:
 	go tool sqlc generate
 
-compose:
-	docker compose up
+fmt:
+	pg_format -B internal/db/query.sql | sponge internal/db/query.sql
+
+migration name:
+	migrate create -ext sql -dir migrations -seq {{name}}
+
+migrate +ARGS:
+	migrate -path migrations -database {{database_url}} {{ARGS}}
+	just schema

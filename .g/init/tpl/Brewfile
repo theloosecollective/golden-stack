@@ -1,1 +1,3 @@
 brew "just"
+brew "pg_format"
+brew "sponge"
